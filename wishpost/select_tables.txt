@@ -1,0 +1,49 @@
+account
+announcementtag
+commercemerchant # 感觉要导一部分
+configuration
+continuoussync
+datacollectionschema
+dhldistributioncenter
+dhl ...
+epctermsrecord
+epcversionterms
+fbwcnchannelmapping
+fbw...
+forbiddenword
+jit...
+largecargologistics...
+merchantbind # keep
+merchantorder # keep
+merchantproduct # keep
+pricingcard
+pricingcardconfig
+pricingcarddata
+pricingcardevent
+pricingcardgroup
+pricingcardgrouptimeline
+pricingcardgrouptimelinerequest
+pricingcardmapping
+pricingcardmappingv2
+pricingcardmappingv2timeline
+pricingcardmappingv2timelinerequest
+pricingcardmodel
+pricingcardtemplate
+pricingcardtemplatev2
+pricingcardtemplatev2timeline
+pricingcardtemplatev2timelinerequest
+pricingcardv2
+pricingcardv2timeline
+pricingcardv2timelinerequest
+pricingchannelgroup
+pricingchannelgrouptimeline
+pricingchannelgrouptimelinerequest
+
+providerentity
+providermapping
+providermappingv2
+providermappingv2timeline
+providermappingv2timelinerequest
+provideruser
+
+riskmanagementconfigs

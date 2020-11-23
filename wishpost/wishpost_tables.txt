@@ -40,7 +40,7 @@ holiday
 jitlock
 logisticevent
 logisticsintegrationprofile
-logisticstieredcarriers
+logisticstieredcarriers # 没了
 maintenanceconfig
 neteasesms
 ordersbag
