@@ -13,6 +13,7 @@ pipeline {
                 script {
                     if (params.is_pg_update){
                     sh """
+                    mv pg_service.conf .pg_service.conf
                     echo "pg is updating"
                     export PGSERVICE=snapshot
                     psql -d postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'qa'" | grep -q 1 || psql -d postgres -c "CREATE DATABASE qa"
