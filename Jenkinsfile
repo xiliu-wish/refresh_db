@@ -20,7 +20,12 @@ pipeline {
                     for c in `cat wishpost/wishpost_select_tables.txt`; do sudo mongodump --host ''' + params.wishpost_mongo_snapshot_ip + ''' -d wishpost -c ${c}  -o ./dump ; done
                     '''
                     sh """sudo mongorestore -d wishpost -h ${params.wishpost_mongo_qa_ip} --drop --dir=dump/wishpost"""
-                    
+                    sh """
+                    sudo -i
+                    export AWS_CONFIG_FILE=/etc/boto.cfg 
+                    export PYTHONPATH=/production/wishpost/current
+                    /production/wishpost/persistent/virtualenv/bin/python /production/wishpost/current/wishpost/micro/payment_pricing/scripts/warmup_pricing_cache.py --env=be_qa --back_days=-1 --forward_days=-1 --job_name="warm up"  --pageduty_routing=5827dea69ad74f9492679c6e4b70071f
+                    """
                 }
             }
         }
