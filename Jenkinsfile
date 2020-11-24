@@ -19,7 +19,7 @@ pipeline {
                     for c in `cat wishpost/wishpost_select_tables.txt`; do mongodump --host ''' + params.wishpost_mongo_snapshot_ip + ''' -d wishpost -c ${c}  -o ./dump ; done
                     '''
                     sh """mongorestore -d wishpost -h ${params.wishpost_mongo_qa_host} --drop --dir=dump/wishpost"""
-                    }
+                    
                 }
             }
         }
