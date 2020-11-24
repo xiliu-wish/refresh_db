@@ -16,6 +16,7 @@ pipeline {
                     println("wishpost need to be updated")
                     println("update wishpost mongo: db is wishpost")
                     sh '''
+                    sudo rm -rf dump
                     for c in `cat wishpost/wishpost_select_tables.txt`; do sudo mongodump --host ''' + params.wishpost_mongo_snapshot_ip + ''' -d wishpost -c ${c}  -o ./dump ; done
                     '''
                     sh """sudo mongorestore -d wishpost -h ${params.wishpost_mongo_qa_ip} --drop --dir=dump/wishpost"""
