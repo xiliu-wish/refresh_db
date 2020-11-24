@@ -16,13 +16,10 @@ pipeline {
                     if (params.wishpost) {
                         println("wishpost need to be updated")
                         println("update wishpost mongo: db is wishpost")
-                        
-                        sh """
-                        for c in `cat ./wishpost_select_tables.txt`; do mongodump --host ${params.wishpost_mongo_snapshot_ip} -d wishpost -c $c  -o ./dump ; done
-                        """
-                        
-                        
-                       
+                        sh '''
+                        for c in `cat wishpost/wishpost_select_tables.txt`; do mongodump --host ''' + params.wishpost_mongo_snapshot_ip + '''-d wishpost -c ${c}  -o ./dump ; done
+                        '''
+                        sh """mongorestore -d wishpost -h ${params.wishpost_mongo_qa_host} --drop --dir=dump/wishpost"""
                     }else{
                         print("wishpost doesn't need to be updated")
                     }
