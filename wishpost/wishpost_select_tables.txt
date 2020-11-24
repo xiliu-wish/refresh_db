@@ -31,7 +31,6 @@ largecargologisticsordertracking
 fbwcnshipmentplan
 userfailedlogin
 fbwcnreport
-candidatemerchantbind
 poddailysummary
 neteasesms
 paymentstatementdownloadjob
@@ -112,7 +111,6 @@ largecargologisticsboxdeliveryrecord
 pricingcardmappingv2timelinerequest
 userinvoiceinfo
 jitskuinventory
-merchantbind
 fusionstoreinfo
 insurancedownloadjob
 redshiftmarker
