@@ -5,7 +5,7 @@ pipeline {
     }
     parameters {
         string(name: 'wishpost_mongo_snapshot_ip', defaultValue: '10.88.50.10', description: 'wishpost mongo snapshot host')
-        string(name: 'wishpost_mongo_qa_host', defaultValue: '10.88.51.219', description: 'wishpost mongo qa host')
+        string(name: 'wishpost_mongo_qa_ip', defaultValue: '10.88.51.219', description: 'wishpost mongo qa host')
     }
     // before the stages running, the agent should installed mongo and pg client
     stages {
