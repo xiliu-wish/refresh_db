@@ -24,7 +24,7 @@ pipeline {
                     sudo -i
                     export AWS_CONFIG_FILE=/etc/boto.cfg 
                     export PYTHONPATH=/production/wishpost/current
-                    /production/wishpost/persistent/virtualenv/bin/python /production/wishpost/current/wishpost/micro/payment_pricing/scripts/warmup_pricing_cache.py --env=be_qa --back_days=-1 --forward_days=-1 --job_name="warm up"  --pageduty_routing=5827dea69ad74f9492679c6e4b70071f
+                    /production/wishpost/persistent/virtualenv/bin/python /production/wishpost/current/wishpost/micro/payment_pricing/scripts/warmup_pricing_cache.py --env=be_qa --back_days=-1 --forward_days=-1 --job_name="warm up"
                     """
                 }
             }
