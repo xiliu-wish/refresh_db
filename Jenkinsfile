@@ -1,17 +1,17 @@
 @Library('pipeline@master') _
 pipeline {
     agent {
-      label "build"
+      label "wishpost-test"
     }
     parameters {
-        booleanParam(name: 'is_pg_update',defaultValue: true, description:'update pg')
+        booleanParam(name: 'wishpost',defaultValue: true, description:'update pg')
     }
     // before the stages running, the agent should installed mongo and pg client
     stages {
         stage("update pg from snapshot"){
             steps {
                 script {
-                    if (params.is_pg_update){
+                    if (params.wishpost){
                         sh """
                         mv .pg_service.conf ~/.
                         echo "pg is updating"
