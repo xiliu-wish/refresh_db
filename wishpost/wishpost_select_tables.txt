@@ -24,7 +24,6 @@ verificationrecord
 pricingcardv2timelinerequest
 reconciliationofflinedetaildata
 kpiwospservice
-user
 marker
 tmp_commercemerchant
 largecargologisticsordertracking
