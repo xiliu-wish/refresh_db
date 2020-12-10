@@ -12,14 +12,18 @@ pipeline {
         stage("update wishpost mongo from snapshot"){
             steps {
                 script {
-                    println("test")
                     println("wishpost need to be updated")
                     println("update wishpost mongo: db is wishpost")
                     sh '''
                     sudo rm -rf dump
                     for c in `cat wishpost/wishpost_select_tables.txt`; do sudo mongodump --host ''' + params.wishpost_mongo_snapshot_ip + ''' -d wishpost -c ${c}  -o ./dump ; done
+                    for c in `cat wishpost/sweeper_select_tables.txt`; do sudo mongodump --host ''' + params.wishpost_mongo_snapshot_ip + ''' -d sweeper -c ${c}  -o ./dump ; done
+                    
                     '''
-                    sh """sudo mongorestore -d wishpost -h ${params.wishpost_mongo_qa_ip} --drop --dir=dump/wishpost"""
+                    sh """
+                    sudo mongorestore -d wishpost -h ${params.wishpost_mongo_qa_ip} --drop --dir=dump/wishpost
+                    sudo mongorestore -d sweeper -h ${params.wishpost_mongo_qa_ip} --drop --dir=dump/sweeper
+                    """
                     sh """
                     sudo -i
                     export AWS_CONFIG_FILE=/etc/boto.cfg 

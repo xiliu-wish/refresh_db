@@ -322,3 +322,5 @@ transaction
 reconciliationofflinepayment
 lianlianpayreconciliationtask
 fbwcnlogisticsreturnoperationhistory
+packingbag
+packingbagservice
