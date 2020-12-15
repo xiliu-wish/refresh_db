@@ -7,7 +7,7 @@ pipeline {
         string(name: 'wishpost_mongo_snapshot_ip', defaultValue: '10.88.50.10', description: 'wishpost mongo snapshot host')
         string(name: 'wishpost_mongo_qa_ip', defaultValue: '10.88.51.219', description: 'wishpost mongo qa host')
         booleanParam(name: 'is_dump',defaultValue: true, description:'dump data')
-        booleanParam(name: 'is_restore',defaultValue: true, description:'restore data to QA')
+        booleanParam(name: 'is_restore',defaultValue: false, description:'restore data to QA')
 
 
     }
