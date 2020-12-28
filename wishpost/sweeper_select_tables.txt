@@ -23,7 +23,6 @@ queuelratelimit
 queueratelimit
 queuleaselimit
 refreshtoken
-system.profile
 transactionservicefee
 turnstilelease
 turnstilerate
